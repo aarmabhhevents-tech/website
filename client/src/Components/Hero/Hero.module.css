@@ -1,0 +1,50 @@
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.content h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.content button {
+  padding: 10px 20px;
+  border: none;
+  background: gold;
+  cursor: pointer;
+}
+
+/* arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.left { left: 20px; }
+.right { right: 20px; }

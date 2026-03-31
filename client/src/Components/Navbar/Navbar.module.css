@@ -1,0 +1,99 @@
+/* Outer wrapper - positions the pill in the viewport */
+.navWrapper {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 92%;
+  max-width: 1300px;
+}
+
+/* The pill itself — switched to grid for true centering */
+.navbar {
+  width: 100%;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  background: rgba(5, 5, 5, 0.96);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Left and right link groups */
+.left {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.right {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navbar a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.navbar a:hover {
+  color: #c9924a;
+}
+
+/* Center logo block */
+.logoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 24px;
+}
+
+.logoBlock img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.brandName {
+  color: #c9924a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  margin-top: 4px;
+  white-space: nowrap;
+  font-family: 'Georgia', serif;
+}
+
+.tagline {
+  color: rgba(201, 146, 74, 0.65);
+  font-size: 7.5px;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+  margin-top: 2px;
+  font-family: 'Georgia', serif;
+}
+
+/* Active nav link */
+.navLink {}
+.navLinkActive {
+  color: #c9924a !important;
+}

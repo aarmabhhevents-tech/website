@@ -1,0 +1,52 @@
+.page {
+  min-height: 100vh;
+  background: #05040a;
+  color: #ffffff;
+}
+
+.hero {
+  padding: 8rem 1.5rem 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.heroInner {
+  max-width: 900px;
+  text-align: center;
+}
+
+.script {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e1c39d;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.4rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.title em {
+  font-style: normal;
+  color: #f7d6a3;
+}
+
+.body {
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #d2d2d7;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+

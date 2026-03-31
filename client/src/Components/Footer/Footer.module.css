@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap');
+
+/* ── Variables ── */
+:root {
+  --gold: #c9a227;
+  --gold-dim: rgba(201, 162, 39, 0.3);
+  --dark: #0a0a0a;
+  --dark-2: #111111;
+  --cream: #f0ead6;
+  --cream-dim: rgba(240, 234, 214, 0.45);
+  --cream-muted: rgba(240, 234, 214, 0.25);
+}
+
+/* ── Footer shell ── */
+.footer {
+  background: var(--dark-2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle radial glow from center bottom */
+.footer::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 300px;
+  background: radial-gradient(ellipse at bottom, rgba(201, 162, 39, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Top gold rule ── */
+.topRule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+
+/* ── Main grid ── */
+.inner {
+  width: 88%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 45px 0 30px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 150px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Nav columns ── */
+.navLeft,
+.navRight {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.navLeft {
+  align-items: flex-end;
+  padding-top: 8px;
+}
+
+.navRight {
+  align-items: flex-start;
+  padding-top: 8px;
+}
+
+.navLink {
+  color: var(--cream-dim);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Animated underline on hover */
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.navLeft .navLink::after {
+  left: auto;
+  right: 0;
+}
+
+.navLink:hover {
+  color: var(--cream);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLinkActive {
+  color: var(--gold) !important;
+}
+
+.navLinkActive::after {
+  width: 100%;
+  background: var(--gold);
+}
+
+/* ── Center brand ── */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  min-width: 240px;
+}
+
+.brandName {
+  font-family: 'Great Vibes', cursive;
+  font-size: 68px;
+  color: var(--cream);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.goldDivider {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ── Socials ── */
+.socials {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.socialLink {
+  color: var(--cream-dim);
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: flex;
+  align-items: center;
+}
+
+.socialLink:hover {
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* ── Contact ── */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.contactLink {
+  color: var(--cream-muted);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.contactLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.contactLink:hover {
+  color: var(--cream);
+}
+
+.contactLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Bottom bar ── */
+.bottom {
+  width: 88%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px 0 28px;
+  border-top: 1px solid rgba(201, 162, 39, 0.12);
+  color: var(--cream-muted);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 60px 0 48px;
+    gap: 40px;
+  }
+
+  .navLeft,
+  .navRight {
+    align-items: center;
+    padding-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 28px;
+  }
+
+  .navLink::after,
+  .navLeft .navLink::after {
+    left: 0;
+    right: auto;
+  }
+
+  .center {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandName {
+    font-size: 52px;
+  }
+}
